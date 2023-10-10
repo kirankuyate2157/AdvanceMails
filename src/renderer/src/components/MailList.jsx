@@ -2,18 +2,20 @@ import React, { useState, useEffect } from "react";
 const MailListItem = ({ mail, onClick }) => {
   return (
     <li
-      className='cursor-pointer p-2 hover:bg-gray-200'
+      className='cursor-pointer w-full p-2 rounded-lg m-2 shadow-sm  hover:bg-gray-200'
       onClick={() => onClick(mail)}
     >
-      <div className='flex items-center justify-between'>
+      <div className='flex w-full items-center pr-3  justify-between'>
         <div className='flex items-center'>
           <div className='w-6 h-6 bg-gray-400 rounded-full flex items-center justify-center mr-2'>
-            {/* Add sender initials or avatar */}
-            {mail.sender.name[0].toUpperCase()}
+           
+            {mail.sender.name[0].toUpperCase()} 
           </div>
-          <div className='truncate'>
+          <div className='truncate w-full flex  justify-between'>
             <span className='font-semibold'>{mail.sender.name}</span>
-            <span className='text-gray-600 ml-1'>- {mail.subject}</span>
+            <span className='text-gray-600  text-sm ml-1'>
+              - {mail.subject}
+            </span>
           </div>
         </div>
         <div className='text-sm text-gray-600'>{mail.date}</div>
@@ -59,8 +61,8 @@ const MailList = ({ mails, onMailClick }) => {
   return (
     <div
       id='mailListContainer'
-      className='h-full overflow-y-auto'
-      style={{ maxHeight: "calc(100vh - 200px)" }}
+      className='h-[92vh] w-full overflow-y-auto '
+      // style={{ maxHeight: "calc(100vh - 200px)" }}
     >
       <ul>
         {mails.slice(0, visibleMails).map((mail) => (

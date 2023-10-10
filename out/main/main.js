@@ -5,7 +5,9 @@ let mainWindow;
 function createWindow() {
   mainWindow = new electron.BrowserWindow({
     width: 1200,
-    height: 800
+    height: 800,
+    minHeight: 560,
+    minWidth: 750
   });
   mainWindow.webContents.openDevTools();
   mainWindow.loadURL("http://localhost:5173");

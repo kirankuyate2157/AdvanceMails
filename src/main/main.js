@@ -6,6 +6,8 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({width: 1200,
     height: 800,
+    minHeight: 560,
+    minWidth: 750,
   });
   mainWindow.webContents.openDevTools();
 
