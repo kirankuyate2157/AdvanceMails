@@ -13,10 +13,9 @@ const addDataToFirebase = async (data) => {
   }
 };
 
-// Function to fetch data from Firebase
 const fetchDataFromFirebase = async () => {
   try {
-    const emailsRef = collection(db, "emails"); // Replace "emails" with your database collection name
+    const emailsRef = collection(db, "emails"); // Specify the collection name ("emails" in this case)
     const querySnapshot = await getDocs(emailsRef);
 
     const data = [];
@@ -26,9 +25,11 @@ const fetchDataFromFirebase = async () => {
 
     return data;
   } catch (error) {
-    console.error("Error fetching data: ", error);
+    console.error("Error fetching data from Firebase:", error);
     return [];
   }
 };
+
+
 
 export { addDataToFirebase, fetchDataFromFirebase };
