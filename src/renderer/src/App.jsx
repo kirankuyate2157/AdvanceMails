@@ -1,20 +1,19 @@
 // import data from "./assets/data";
 // import FetchData from "./components/FetchData";
 import MailDashboard from "./components/MailDashboard";
-import React,{useState,useEffect} from "react";
+import {useState,useEffect} from "react";
+import { addDataToFirebase, fetchDataFromFirebase} from "./services/useFirebase.js";
 
-import {  fetchDataFromFirebase} from "./services/useFirebase.js";
+const addData = async () => {
+  for (const item of data) {
+    await addDataToFirebase(item);
+  }
+};
 
-// const addData = async () => {
-//   for (const item of data) {
-//     await addDataToFirebase(item);
-//   }
-// };
-
+//add new mails data to firebase collections
 // addData().then(() => {
 //   console.log("Data added to Firebase.");
 // });
-
 
 function App() {
   const [emails, setEmails] = useState([]);
@@ -25,8 +24,7 @@ function App() {
         const data = await fetchDataFromFirebase();
 
         if (data.length > 0) {
-          // Set the fetched data in the state
-          console.log(data);
+          // console.log(data);
           setEmails(data);
         } else {
           console.log("No data found in Firebase.");
@@ -37,12 +35,11 @@ function App() {
     };
 
     fetchAndPrintData();
-  }, []); // The empty dependency array makes sure this effect runs only once
+  }, []); 
 
   return (
     <>
       <div className='App w-full'>
-  
         <MailDashboard mails={emails} />
       </div>
     </>
