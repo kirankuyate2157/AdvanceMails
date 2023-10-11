@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { getUserData, GoogleAuth, login } from './../services/firebaseConfig.js';
-import Login from './auth/Login';
 
 
 import MailList from "./MailList";

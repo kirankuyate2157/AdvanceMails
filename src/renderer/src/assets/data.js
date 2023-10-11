@@ -1,605 +1,294 @@
-const data=[
+const data=[  
     {
-      "id": 1,
-      "subject": "Meeting Agenda",
-      "sender": {
-        "name": "John Doe",
-        "email": "john.doe@example.com"
+      id: 11,
+      subject: "New Project Proposal",
+      sender: {
+        name: "Project Manager",
+        email: "pm@example.com",
       },
-      "date": "2023-09-28 10:30 AM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": false,
-      "labels": ["Work", "Meeting"],
-      "attachments": [
-        {
-          "filename": "agenda.pdf",
-          "size": "2.1 MB"
-        }
-      ],
-      "body": "Dear Team,\n\nPlease find attached the agenda for our upcoming meeting. Kindly review it before the meeting.\n\nBest regards,\nJohn"
+      date: "2023-09-18 02:30 PM",
+      folder: "inbox",
+      isRead: false,
+      isStarred: true,
+      labels: ["Work", "Proposal"],
+      attachments: [],
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non suscipit, quis venenatis ex. Sed in hendrerit, erat non bibendum, purus arcu bibendum arcu.",
     },
     {
-      "id": 2,
-      "subject": "Report Submission",
-      "sender": {
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com"
+      id: 12,
+      subject: "Marketing Campaign Update",
+      sender: {
+        name: "Marketing Team",
+        email: "marketing@example.com",
       },
-      "date": "2023-09-27 03:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Report"],
-      "attachments": [
-        {
-          "filename": "report.docx",
-          "size": "1.5 MB"
-        }
-      ],
-      "body": "Hi all,\n\nI have completed the quarterly report. You can find it attached to this email. Let me know if you have any feedback.\n\nRegards,\nJane"
+      date: "2023-09-17 09:45 AM",
+      folder: "inbox",
+      isRead: true,
+      isStarred: false,
+      labels: ["Work", "Marketing"],
+      attachments: [],
+      body: "Nam eu facilisis urna. Sed et rhoncus ante, nec fringilla odio. Integer fringilla tellus eu massa tristique.",
     },
     {
-      "id": 3,
-      "subject": "Invitation to Webinar",
-      "sender": {
-        "name": "Webinar Team",
-        "email": "webinar@example.com"
+      id: 13,
+      subject: "Feedback Request",
+      sender: {
+        name: "Feedback Team",
+        email: "feedback@example.com",
       },
-      "date": "2023-09-26 09:15 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Webinar", "Education"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our upcoming webinar on 'Advanced Web Development.' Please register using the provided link.\n\nBest regards,\nWebinar Team"
+      date: "2023-09-16 04:15 PM",
+      folder: "inbox",
+      isRead: false,
+      isStarred: false,
+      labels: ["Feedback", "Survey"],
+      attachments: [],
+      body: "Vestibulum ac nulla et eros semper eleifend eu vitae mi. In hac habitasse platea dictumst. Nulla a turpis ac ex dapibus condimentum at ut metus.",
     },
     {
-      "id": 4,
-      "subject": "Job Interview Invitation",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
+      id: 14,
+      subject: "Monthly Sales Report",
+      sender: {
+        name: "Sales Department",
+        email: "sales@example.com",
       },
-      "date": "2023-09-25 02:00 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Job", "Interview"],
-      "attachments": [],
-      "body": "Dear Applicant,\n\nCongratulations! You have been selected for an interview for the position of Software Developer. Please confirm your availability.\n\nSincerely,\nHR Department"
+      date: "2023-09-15 01:30 PM",
+      folder: "inbox",
+      isRead: true,
+      isStarred: false,
+      labels: ["Work", "Sales"],
+      attachments: [],
+      body: "Fusce efficitur nec mi eget bibendum. Nulla facilisi. Aenean eu est vel turpis malesuada.",
     },
     {
-      "id": 5,
-      "subject": "Reminder: Project Deadline",
-      "sender": {
-        "name": "Manager",
-        "email": "manager@example.com"
+      id: 15,
+      subject: "Important Announcement",
+      sender: {
+        name: "Company CEO",
+        email: "ceo@example.com",
       },
-      "date": "2023-09-24 11:00 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Deadline"],
-      "attachments": [],
-      "body": "Team,\n\nThis is a friendly reminder that the project deadline is approaching. Let's ensure all tasks are completed on time.\n\nRegards,\nManager"
+      date: "2023-09-14 11:00 AM",
+      folder: "inbox",
+      isRead: false,
+      isStarred: false,
+      labels: ["Work", "Announcement"],
+      attachments: [],
+      body: "Phasellus ac tellus at ligula tristique auctor. Donec eu tincidunt tortor, vel lacinia urna. Quisque non ligula dui.",
     },
     {
-      "id": 6,
-      "subject": "Holiday Party Invitation",
-      "sender": {
-        "name": "Event Coordinator",
-        "email": "events@example.com"
+      id: 16,
+      subject: "Product Launch Details",
+      sender: {
+        name: "Product Team",
+        email: "product@example.com",
       },
-      "date": "2023-09-23 05:30 PM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": true,
-      "labels": ["Event", "Party"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our annual holiday party. Join us for a night of fun, food, and festivities!\n\nBest regards,\nEvent Coordinator"
+      date: "2023-09-13 10:15 AM",
+      folder: "inbox",
+      isRead: true,
+      isStarred: true,
+      labels: ["Product", "Launch"],
+      attachments: [],
+      body: "Curabitur vel quam vel odio posuere scelerisque. Aliquam nec sagittis felis. Cras a velit sed elit auctor venenatis non ut erat.",
     },
     {
-      "id": 7,
-      "subject": "Payment Confirmation",
-      "sender": {
-        "name": "Finance Department",
-        "email": "finance@example.com"
+      id: 17,
+      subject: "Invitation to Conference",
+      sender: {
+        name: "Conference Organizer",
+        email: "conference@example.com",
       },
-      "date": "2023-09-22 01:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Finance", "Payment"],
-      "attachments": [],
-      "body": "Dear Customer,\n\nThis email is to confirm the successful payment of your recent invoice. Thank you for your prompt payment.\n\nSincerely,\nFinance Department"
+      date: "2023-09-12 08:30 AM",
+      folder: "inbox",
+      isRead: true,
+      isStarred: true,
+      labels: ["Event", "Conference"],
+      attachments: [],
+      body: "Suspendisse fermentum, sem et volutpat bibendum, nulla quam eleifend nisi, non euismod risus massa in purus.",
     },
     {
-      "id": 8,
-      "subject": "New Product Announcement",
-      "sender": {
-        "name": "Marketing Team",
-        "email": "marketing@example.com"
+      id: 18,
+      subject: "Urgent Task Assignment",
+      sender: {
+        name: "Manager",
+        email: "manager@example.com",
       },
-      "date": "2023-09-21 08:00 AM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": false,
-      "labels": ["Marketing", "Product"],
-      "attachments": [
-        {
-          "filename": "product.jpg",
-          "size": "500 KB"
-        }
-      ],
-      "body": "Hi,\n\nWe are excited to announce the launch of our new product! Check out the attached image for a sneak peek.\n\nBest regards,\nMarketing Team"
+      date: "2023-09-11 03:45 PM",
+      folder: "inbox",
+      isRead: true,
+      isStarred: false,
+      labels: ["Work", "Urgent"],
+      attachments: [],
+      body: "Vestibulum sed cursus felis, at commodo orci. Etiam tristique risus et massa aliquam ullamcorper.",
     },
-    {
-      "id": 9,
-      "subject": "Vacation Request Approved",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-20 04:15 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["HR", "Vacation"],
-      "attachments": [],
-      "body": "Dear Employee,\n\nYour vacation request has been approved. Enjoy your time off!\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 10,
-      "subject": "Important Security Update",
-      "sender": {
-        "name": "IT Department",
-        "email": "it@example.com"
-      },
-      "date": "2023-09-19 12:30 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["IT", "Security"],
-      "attachments": [],
-      "body": "Hello,\n\nWe have implemented an important security update for your account. Please review this email for details.\n\nBest regards,\nIT Department"
-    },
-    {
-      "id": 2,
-      "subject": "Report Submission",
-      "sender": {
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com"
-      },
-      "date": "2023-09-27 03:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Report"],
-      "attachments": [
-        {
-          "filename": "report.docx",
-          "size": "1.5 MB"
-        }
-      ],
-      "body": "Hi all,\n\nI have completed the quarterly report. You can find it attached to this email. Let me know if you have any feedback.\n\nRegards,\nJane"
-    },
-    {
-      "id": 3,
-      "subject": "Invitation to Webinar",
-      "sender": {
-        "name": "Webinar Team",
-        "email": "webinar@example.com"
-      },
-      "date": "2023-09-26 09:15 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Webinar", "Education"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our upcoming webinar on 'Advanced Web Development.' Please register using the provided link.\n\nBest regards,\nWebinar Team"
-    },
-    {
-      "id": 4,
-      "subject": "Job Interview Invitation",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-25 02:00 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Job", "Interview"],
-      "attachments": [],
-      "body": "Dear Applicant,\n\nCongratulations! You have been selected for an interview for the position of Software Developer. Please confirm your availability.\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 5,
-      "subject": "Reminder: Project Deadline",
-      "sender": {
-        "name": "Manager",
-        "email": "manager@example.com"
-      },
-      "date": "2023-09-24 11:00 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Deadline"],
-      "attachments": [],
-      "body": "Team,\n\nThis is a friendly reminder that the project deadline is approaching. Let's ensure all tasks are completed on time.\n\nRegards,\nManager"
-    },
-    {
-      "id": 6,
-      "subject": "Holiday Party Invitation",
-      "sender": {
-        "name": "Event Coordinator",
-        "email": "events@example.com"
-      },
-      "date": "2023-09-23 05:30 PM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": true,
-      "labels": ["Event", "Party"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our annual holiday party. Join us for a night of fun, food, and festivities!\n\nBest regards,\nEvent Coordinator"
-    },
-    {
-      "id": 7,
-      "subject": "Payment Confirmation",
-      "sender": {
-        "name": "Finance Department",
-        "email": "finance@example.com"
-      },
-      "date": "2023-09-22 01:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Finance", "Payment"],
-      "attachments": [],
-      "body": "Dear Customer,\n\nThis email is to confirm the successful payment of your recent invoice. Thank you for your prompt payment.\n\nSincerely,\nFinance Department"
-    },
-    {
-      "id": 8,
-      "subject": "New Product Announcement",
-      "sender": {
-        "name": "Marketing Team",
-        "email": "marketing@example.com"
-      },
-      "date": "2023-09-21 08:00 AM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": false,
-      "labels": ["Marketing", "Product"],
-      "attachments": [
-        {
-          "filename": "product.jpg",
-          "size": "500 KB"
-        }
-      ],
-      "body": "Hi,\n\nWe are excited to announce the launch of our new product! Check out the attached image for a sneak peek.\n\nBest regards,\nMarketing Team"
-    },
-    {
-      "id": 9,
-      "subject": "Vacation Request Approved",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-20 04:15 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["HR", "Vacation"],
-      "attachments": [],
-      "body": "Dear Employee,\n\nYour vacation request has been approved. Enjoy your time off!\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 10,
-      "subject": "Important Security Update",
-      "sender": {
-        "name": "IT Department",
-        "email": "it@example.com"
-      },
-      "date": "2023-09-19 12:30 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["IT", "Security"],
-      "attachments": [],
-      "body": "Hello,\n\nWe have implemented an important security update for your account. Please review this email for details.\n\nBest regards,\nIT Department"
-    },
-    {
-      "id": 2,
-      "subject": "Report Submission",
-      "sender": {
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com"
-      },
-      "date": "2023-09-27 03:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Report"],
-      "attachments": [
-        {
-          "filename": "report.docx",
-          "size": "1.5 MB"
-        }
-      ],
-      "body": "Hi all,\n\nI have completed the quarterly report. You can find it attached to this email. Let me know if you have any feedback.\n\nRegards,\nJane"
-    },
-    {
-      "id": 3,
-      "subject": "Invitation to Webinar",
-      "sender": {
-        "name": "Webinar Team",
-        "email": "webinar@example.com"
-      },
-      "date": "2023-09-26 09:15 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Webinar", "Education"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our upcoming webinar on 'Advanced Web Development.' Please register using the provided link.\n\nBest regards,\nWebinar Team"
-    },
-    {
-      "id": 4,
-      "subject": "Job Interview Invitation",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-25 02:00 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Job", "Interview"],
-      "attachments": [],
-      "body": "Dear Applicant,\n\nCongratulations! You have been selected for an interview for the position of Software Developer. Please confirm your availability.\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 5,
-      "subject": "Reminder: Project Deadline",
-      "sender": {
-        "name": "Manager",
-        "email": "manager@example.com"
-      },
-      "date": "2023-09-24 11:00 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Deadline"],
-      "attachments": [],
-      "body": "Team,\n\nThis is a friendly reminder that the project deadline is approaching. Let's ensure all tasks are completed on time.\n\nRegards,\nManager"
-    },
-    {
-      "id": 6,
-      "subject": "Holiday Party Invitation",
-      "sender": {
-        "name": "Event Coordinator",
-        "email": "events@example.com"
-      },
-      "date": "2023-09-23 05:30 PM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": true,
-      "labels": ["Event", "Party"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our annual holiday party. Join us for a night of fun, food, and festivities!\n\nBest regards,\nEvent Coordinator"
-    },
-    {
-      "id": 7,
-      "subject": "Payment Confirmation",
-      "sender": {
-        "name": "Finance Department",
-        "email": "finance@example.com"
-      },
-      "date": "2023-09-22 01:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Finance", "Payment"],
-      "attachments": [],
-      "body": "Dear Customer,\n\nThis email is to confirm the successful payment of your recent invoice. Thank you for your prompt payment.\n\nSincerely,\nFinance Department"
-    },
-    {
-      "id": 8,
-      "subject": "New Product Announcement",
-      "sender": {
-        "name": "Marketing Team",
-        "email": "marketing@example.com"
-      },
-      "date": "2023-09-21 08:00 AM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": false,
-      "labels": ["Marketing", "Product"],
-      "attachments": [
-        {
-          "filename": "product.jpg",
-          "size": "500 KB"
-        }
-      ],
-      "body": "Hi,\n\nWe are excited to announce the launch of our new product! Check out the attached image for a sneak peek.\n\nBest regards,\nMarketing Team"
-    },
-    {
-      "id": 9,
-      "subject": "Vacation Request Approved",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-20 04:15 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["HR", "Vacation"],
-      "attachments": [],
-      "body": "Dear Employee,\n\nYour vacation request has been approved. Enjoy your time off!\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 10,
-      "subject": "Important Security Update",
-      "sender": {
-        "name": "IT Department",
-        "email": "it@example.com"
-      },
-      "date": "2023-09-19 12:30 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["IT", "Security"],
-      "attachments": [],
-      "body": "Hello,\n\nWe have implemented an important security update for your account. Please review this email for details.\n\nBest regards,\nIT Department"
-    },
-    {
-      "id": 2,
-      "subject": "Report Submission",
-      "sender": {
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com"
-      },
-      "date": "2023-09-27 03:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Report"],
-      "attachments": [
-        {
-          "filename": "report.docx",
-          "size": "1.5 MB"
-        }
-      ],
-      "body": "Hi all,\n\nI have completed the quarterly report. You can find it attached to this email. Let me know if you have any feedback.\n\nRegards,\nJane"
-    },
-    {
-      "id": 3,
-      "subject": "Invitation to Webinar",
-      "sender": {
-        "name": "Webinar Team",
-        "email": "webinar@example.com"
-      },
-      "date": "2023-09-26 09:15 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Webinar", "Education"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our upcoming webinar on 'Advanced Web Development.' Please register using the provided link.\n\nBest regards,\nWebinar Team"
-    },
-    {
-      "id": 4,
-      "subject": "Job Interview Invitation",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-25 02:00 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": true,
-      "labels": ["Job", "Interview"],
-      "attachments": [],
-      "body": "Dear Applicant,\n\nCongratulations! You have been selected for an interview for the position of Software Developer. Please confirm your availability.\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 5,
-      "subject": "Reminder: Project Deadline",
-      "sender": {
-        "name": "Manager",
-        "email": "manager@example.com"
-      },
-      "date": "2023-09-24 11:00 AM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Work", "Deadline"],
-      "attachments": [],
-      "body": "Team,\n\nThis is a friendly reminder that the project deadline is approaching. Let's ensure all tasks are completed on time.\n\nRegards,\nManager"
-    },
-    {
-      "id": 6,
-      "subject": "Holiday Party Invitation",
-      "sender": {
-        "name": "Event Coordinator",
-        "email": "events@example.com"
-      },
-      "date": "2023-09-23 05:30 PM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": true,
-      "labels": ["Event", "Party"],
-      "attachments": [],
-      "body": "Hello,\n\nYou are invited to our annual holiday party. Join us for a night of fun, food, and festivities!\n\nBest regards,\nEvent Coordinator"
-    },
-    {
-      "id": 7,
-      "subject": "Payment Confirmation",
-      "sender": {
-        "name": "Finance Department",
-        "email": "finance@example.com"
-      },
-      "date": "2023-09-22 01:45 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["Finance", "Payment"],
-      "attachments": [],
-      "body": "Dear Customer,\n\nThis email is to confirm the successful payment of your recent invoice. Thank you for your prompt payment.\n\nSincerely,\nFinance Department"
-    },
-    {
-      "id": 8,
-      "subject": "New Product Announcement",
-      "sender": {
-        "name": "Marketing Team",
-        "email": "marketing@example.com"
-      },
-      "date": "2023-09-21 08:00 AM",
-      "folder": "inbox",
-      "isRead": false,
-      "isStarred": false,
-      "labels": ["Marketing", "Product"],
-      "attachments": [
-        {
-          "filename": "product.jpg",
-          "size": "500 KB"
-        }
-      ],
-      "body": "Hi,\n\nWe are excited to announce the launch of our new product! Check out the attached image for a sneak peek.\n\nBest regards,\nMarketing Team"
-    },
-    {
-      "id": 9,
-      "subject": "Vacation Request Approved",
-      "sender": {
-        "name": "HR Department",
-        "email": "hr@example.com"
-      },
-      "date": "2023-09-20 04:15 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["HR", "Vacation"],
-      "attachments": [],
-      "body": "Dear Employee,\n\nYour vacation request has been approved. Enjoy your time off!\n\nSincerely,\nHR Department"
-    },
-    {
-      "id": 10,
-      "subject": "Important Security Update",
-      "sender": {
-        "name": "IT Department",
-        "email": "it@example.com"
-      },
-      "date": "2023-09-19 12:30 PM",
-      "folder": "inbox",
-      "isRead": true,
-      "isStarred": false,
-      "labels": ["IT", "Security"],
-      "attachments": [],
-      "body": "Hello,\n\nWe have implemented an important security update for your account. Please review this email for details.\n\nBest regards,\nIT Department"
-    }
-    // Add more mail objects here
-  ]
+
   
-  export default data;
+  
+  
+  {
+    id: 20,
+    subject: "New Employee Onboarding",
+    sender: {
+      name: "HR Department",
+      email: "hr@example.com",
+    },
+    date: "2023-09-09 12:30 PM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: false,
+    labels: ["HR", "Onboarding"],
+    attachments: [],
+    body: "Sed sit amet magna eget sapien vehicula auctor. Nullam dapibus, velit sit amet aliquet auctor, neque turpis rhoncus turpis.",
+  },
+  {
+    id: 21,
+    subject: "Project Update Meeting",
+    sender: {
+      name: "Project Manager",
+      email: "pm@example.com",
+    },
+    date: "2023-09-08 11:00 AM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: false,
+    labels: ["Work", "Meeting"],
+    attachments: [],
+    body: "Suspendisse potenti. Integer consequat a eros a tristique. Sed hendrerit, metus ac eleifend dapibus, lorem nisi.",
+  },
+  {
+    id: 22,
+    subject: "Holiday Schedule",
+    sender: {
+      name: "HR Department",
+      email: "hr@example.com",
+    },
+    date: "2023-09-07 10:30 AM",
+    folder: "inbox",
+    isRead: false,
+    isStarred: true,
+    labels: ["HR", "Holidays"],
+    attachments: [],
+    body: "Proin ac libero vel odio tincidunt hendrerit. Phasellus a eros vel ante fermentum viverra eu id felis.",
+  },
+  {
+    id: 23,
+    subject: "Customer Support Survey",
+    sender: {
+      name: "Customer Support",
+      email: "support@example.com",
+    },
+    date: "2023-09-06 09:15 AM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: true,
+    labels: ["Feedback", "Survey"],
+    attachments: [],
+    body: "Pellentesque sodales, justo eget viverra scelerisque, tortor dui consequat libero, at tincidunt purus libero eu lectus.",
+  },
+  {
+    id: 24,
+    subject: "Product Demo Invitation",
+    sender: {
+      name: "Sales Team",
+      email: "sales@example.com",
+    },
+    date: "2023-09-05 08:00 AM",
+    folder: "inbox",
+    isRead: false,
+    isStarred: true,
+    labels: ["Product", "Demo"],
+    attachments: [],
+    body: "Curabitur ultrices id mi at tincidunt. Vivamus tincidunt ipsum vel velit consequat, eu bibendum quam semper.",
+  },
+  {
+    id: 25,
+    subject: "Team Building Event",
+    sender: {
+      name: "HR Department",
+      email: "hr@example.com",
+    },
+    date: "2023-09-04 07:30 AM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: false,
+    labels: ["HR", "Team Building"],
+    attachments: [],
+    body: "Sed tincidunt odio sit amet ex feugiat, in facilisis arcu efficitur. Proin eget leo sit amet lorem.",
+  },
+  {
+    id: 26,
+    subject: "Account Statement",
+    sender: {
+      name: "Finance Department",
+      email: "finance@example.com",
+    },
+    date: "2023-09-03 06:15 AM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: false,
+    labels: ["Finance", "Statement"],
+    attachments: [],
+    body: "Mauris lacinia lacus a erat suscipit, eget luctus augue congue. In id mi fermentum, bibendum purus.",
+  },
+  {
+    id: 27,
+    subject: "New Company Policies",
+    sender: {
+      name: "HR Department",
+      email: "hr@example.com",
+    },
+    date: "2023-09-02 05:00 AM",
+    folder: "inbox",
+    isRead: false,
+    isStarred: true,
+    labels: ["HR", "Policies"],
+    attachments: [],
+    body: "Nunc et tortor non dui ultrices sodales. Nullam luctus tortor at vestibulum varius. Etiam ut odio.",
+  },
+  {
+    id: 28,
+    subject: "Server Maintenance Notice",
+    sender: {
+      name: "IT Department",
+      email: "it@example.com",
+    },
+    date: "2023-09-01 04:00 AM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: false,
+    labels: ["IT", "Maintenance"],
+    attachments: [],
+    body: "Phasellus sed est non arcu volutpat venenatis in ut eros. Nam nec eros bibendum, aliquam ante quis, feugiat nunc.",
+  },
+  {
+    id: 29,
+    subject: "Project Deadline Reminder",
+    sender: {
+      name: "Project Manager",
+      email: "pm@example.com",
+    },
+    date: "2023-08-31 03:00 AM",
+    folder: "inbox",
+    isRead: true,
+    isStarred: false,
+    labels: ["Work", "Deadline"],
+    attachments: [],
+    body: "Sed non varius metus. Sed dictum, risus vel convallis viverra, tortor neque fringilla nunc.",
+  },
+  {
+    id: 30,
+    subject: "New Product Announcement",
+    sender: {
+      name: "Marketing Team",
+      email: "marketing@example.com",
+    },
+    date: "2023-08-30 02:00 AM",
+    folder: "inbox",
+    isRead: false,
+    isStarred: false,
+    labels: ["Product", "Announcement"],
+    attachments: [],
+    body: "In quis nisl sit amet libero egestas elementum a nec quam. Nam eget metus sit amet odio varius suscipit.",
+  },
+];
+
+  
+  // export default data;
