@@ -5,7 +5,7 @@
 - Search mail query 
 - details mails
 - lite simple UI responsive
-
+- it is an assessment of WNS made within a day + Chrome extensions.
 
 
 ![image](https://github.com/kirankuyate2157/AdvanceMails/assets/84271800/478ec26d-4edb-4766-aa67-b8b7d941da07)
